@@ -1,112 +1,524 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta name="author" content="Chris">
-        <!-- update the below information before going live-->
-        <meta name="description" content="Your website description here">
-        <meta name="keywords" content="keywords, for, your, site">
-        <!-- update the above information before going live-->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lee's Builders</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-            <div class="header-container">
-                <img src="Lee’s Builders.png" class="logo1" alt="company logo">
-                <div></div>
-            <p class="phone-number">Call us on <a href="tel:07956356296">1234</a></p>
-            </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LH Group SW Ltd - Building & Maintenance Contractors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #1a3e63;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background-color: #ff9900;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 24px;
+            color: #1a3e63;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            line-height: 1.2;
+        }
+        
+        .logo-text span {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ff9900;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ff9900;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e58900;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #1a3e63;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            background-color: #ddd;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1a3e63;
+        }
+        
+        .service-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: #1a3e63;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: #ddd;
+            border-radius: 8px;
+            background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #1a3e63;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background-color: #1a3e63;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0f2a46;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #ff9900;
+        }
+        
+        .footer-column p, .footer-column li {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            opacity: 0.7;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info li i {
+            margin-right: 10px;
+            color: #ff9900;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
             
+            .logo {
+                margin-bottom: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 0 10px 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-circle">LH</div>
+                <div class="logo-text">
+                    <h1>LH Group SW Ltd</h1>
+                    <span>Building & Maintenance Contractors</span>
+                </div>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#meet-lee">Meet Lee</a> </li>
-                    <li><a href="#meet-jack">Meet Jack</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+        </div>
+    </header>
 
-        <img src="Main image.jpg" class="main-image" alt="Lee and the team hard at work">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>Quality Building & Maintenance Services</h2>
+            <p>Professional, reliable building contractors serving the South West with excellence for over 15 years. From small repairs to large extensions, we deliver quality craftsmanship on every project.</p>
+            <a href="#" class="btn">Get a Free Quote</a>
+        </div>
+    </section>
 
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>With 20 years of hands-on experience in carpentry and construction, I take pride in turning visions into solid, lasting structures. From home extensions and kitchen/bathroom fittings to building a house from scratch, I&apos;ve honed my craft in every aspect of the trade. Precision, reliability, and a deep respect for quality materials are at the heart of every project.
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of building and maintenance services to meet all your property needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1541979667479-339a9c826894?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>General Building</h3>
+                        <p>Complete building services including repairs, maintenance, and refurbishment for residential and commercial properties.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Extensions & Renovations</h3>
+                        <p>Professional home extensions and renovation services to create more space and add value to your property.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1577495508324-d297121d5745?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Loft Conversions</h3>
+                        <p>Transform your unused loft space into a beautiful, functional room with our expert conversion services.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                Building isn&apos;t just a job — it&apos;s about creating spaces where families grow, memories are made, and communities thrive. Raised and rooted in Devon, I combine traditional craftsmanship with modern techniques to deliver results that stand the test of time, using sustainably sourced local materials wherever possible.
-                
-                Services
-                Custom Carpentry
-                
-                Home Extensions & Renovations
-                
-                Kitchen & Bathroom Installations
-                
-                Full Property Builds
-                
-                Period Property Restoration
-                
-                Proudly serving Devon with the same dedication I&apos;d give to my own home.
-            </p>
-            <img src="About-us.webp" class="about-pic" alt="Team work">
-        </section>
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About LH Group SW Ltd</h2>
+                    <p>LH Group SW Ltd has been providing exceptional building and maintenance services across the South West for over 15 years. Founded by Lee Hodges, our company has built a reputation for quality workmanship, reliability, and excellent customer service.</p>
+                    <p>We take pride in our attention to detail and commitment to delivering projects on time and within budget. Whether you need a small repair or a major construction project, you can trust our experienced team to deliver outstanding results.</p>
+                    <p>All our work is fully insured, and we comply with all relevant building regulations and safety standards.</p>
+                    <a href="#" class="btn">Learn More About Us</a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
 
-        <section id="meet-lee" class="section">
-            <h2>Meet Lee &mdash; Owner & Master Builder</h2>
-            <p>For 25 years, Lee has been the cornerstone of [Your Business Name], blending old-world craftsmanship with modern construction expertise. As a Devon-born builder, his work reflects both the rugged durability of the coastline and the precision of a true artisan.
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it - hear from some of our satisfied customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"LH Group completed our kitchen extension and did an amazing job. They were professional, clean, and finished ahead of schedule. Would highly recommend!"</p>
+                    <p class="testimonial-author">- Sarah Johnson, Plymouth</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We used LH Group for a complete bathroom renovation and couldn't be happier with the results. Their attention to detail was exceptional."</p>
+                    <p class="testimonial-author">- Mark Williams, Torquay</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Lee and his team converted our loft into a beautiful bedroom with en-suite. The project was managed professionally from start to finish."</p>
+                    <p class="testimonial-author">- Emma Collins, Exeter</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                A Builder of Many Talents
-                Lee&apos;s versatility shines in his ability to:
-                
-                Restore period properties with heritage-sensitive techniques.
-                
-                Design contemporary extensions that breathe new life into homes.
-                
-                Tackle full-scale builds from foundation to finish carpentry.
-                
-                No project is too complex—whether it&apos;s a handcrafted oak staircase, a high-spec kitchen installation, or an eco-friendly home build, Lee approaches each challenge with equal passion.
-                
-                Rooted in Community
-                A firm believer that great buildings grow from great relationships, Lee:
-                
-                Partners with Devon-based suppliers for sustainable materials.
-                
-                Mentors local apprentices to preserve traditional skills.
-                
-                Volunteers with [Local Organization] to improve housing access.
-                
-                “I measure success by the pride in a client&apos;s smile—and the decades a structure stands strong.”</p>
-            <img src="Meet Lee.png" alt="Picture of Lee" class="lee">
-        </section>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact us today for a free, no-obligation quote on any of our building and maintenance services. We serve clients across Devon and Cornwall.</p>
+            <a href="#" class="btn">Get Your Free Quote</a>
+        </div>
+    </section>
 
-        <section id="meet-jack" class="section">
-            <h2>Meet Jack &mdash; Master Carpenter & Craftsman</h2>
-            <p>With 15 years of meticulous woodworking experience, Jack brings an artist&apos;s eye and a perfectionist&apos;s touch to every project at [Your Business Name]. A Devon native like Lee, he shares the same commitment to quality, but with a specialized focus on transformative carpentry that turns raw materials into functional art.
-
-                Precision Where It Matters Most
-                Jack&apos;s hands have shaped:
-                
-                Bespoke kitchens with hand-fitted dovetail joints.
-                
-                Custom staircases that become a home&apos;s centerpiece.
-                
-                Built-in furniture tailored to millimeter precision.
-                
-                Heritage woodwork repairs preserving Devon&apos;s architectural charm.
-                
-                His ability to bridge traditional techniques with modern design means no detail is overlooked—whether it&apos;s the grain-matching of hardwood panels or the silent glide of a soft-close drawer.
-                
-                Community Craftsmanship
-                Jack believes exceptional carpentry should serve everyone. He:
-                
-                Sources sustainably harvested local timber (often from Devon woodlands).
-                
-                Teaches weekend woodworking workshops at the community center.
-                
-                Donates skills to build accessible ramps for homes in need.
-                
-                “Wood speaks—if you listen. My job is to let its strength and beauty shine through.”</p>
-            <img src="Meet Jack The Carpenter.png" alt="Picture of Jack" class="meeting-jack">
-        </section>
-
-    </body>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LH Group SW Ltd</h3>
+                    <p>Professional building and maintenance contractors serving the South West with quality and reliability since 2008.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> Mobile: 07833 906 526</li>
+                        <li><i class="fas fa-phone"></i> Office: 01803 526 286</li>
+                        <li><i class="fas fa-envelope"></i> lh.building@btinternet.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Serving Devon & Cornwall</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LH Group SW Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
