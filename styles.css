@@ -21,8 +21,8 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: white;
-    color: navy-blue;
+    background-color: #1a3e63;
+    color: white;
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -397,4 +397,5 @@ footer {
         margin: 20px auto;
     }
 }
+
 
