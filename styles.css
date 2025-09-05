@@ -52,7 +52,7 @@ header {
     margin-right: 15px;
     font-weight: bold;
     font-size: 24px;
-    color: #1a3e63;
+    color: #000000;
 }
 
 .logo-text h1 {
@@ -397,4 +397,5 @@ footer {
         margin: 20px auto;
     }
 }
+
 
