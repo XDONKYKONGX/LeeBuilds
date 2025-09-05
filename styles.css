@@ -44,7 +44,7 @@ header {
 .logo-circle {
     width: 60px;
     height: 60px;
-    background-color: #ff9900;
+    background-color: #000080;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -397,3 +397,4 @@ footer {
         margin: 20px auto;
     }
 }
+
